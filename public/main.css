@@ -1,0 +1,8 @@
+.container{
+    background: #181642;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
