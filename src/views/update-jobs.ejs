@@ -1,0 +1,72 @@
+<div class="mt-5 mb-2 job-form">
+     
+    <form action="/update-jobs" method="post">
+  
+    <h2>Update Job</h2>
+    
+
+    <div class="mb-3">
+    <select class="form-select" aria-label="select example" >
+        <option selected disabled>Select Job Category</option>
+        <option value="1">Tech</option>
+        <option value="2">Non Tech</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+    <select class="form-select" aria-label="select example" >
+        <option selected disabled>Select Job Designation</option>
+        <option value="1">SDE-1</option>
+        <option value="2">SDE-2</option>
+        <option value="3">HR</option>
+        <option value="3">MEAN Developer</option>
+        <option value="3">MERN Developer</option>
+        <option value="3">Full-Stack Developer</option>
+        <option value="3">Front-End Developer</option>
+        <option value="3">Back-End Developer</option>
+        <option value="3">Java Developer</option>
+        <option value="3">Python Developer</option>
+        <option value="3">DevOps Engineer</option>
+      </select>
+    </div>
+
+        <div class="mb-3">
+          <input type="text" class="form-control" id="location" name="location" placeholder="Enter Job Location" required>
+          </div>
+
+        <div class="mb-3"> 
+            <input type="text" class="form-control" id="company" name="company" placeholder="Enter Comapny Name"  required>
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter Salary " required> 
+        </div>
+
+        <div class="mb-3"> 
+            <input type="number" class="form-control" id="vacancies" name="vacancies" placeholder="Total Vacancies " required> 
+        </div>
+
+        <div class="mb-3">
+            <select class="form-select" aria-label="select example" multiple >
+                <option selected disabled>Select Skills Required For This Job</option>
+                <option value="1">React</option>
+                <option value="2">NodeJs</option>
+                <option value="3">Angular</option>
+                <option value="3">Express</option>
+                <option value="3">MongoDB</option>
+                <option value="3">Java</option>
+                <option value="3">C++</option>
+                <option value="3">SpringBoot</option>
+                <option value="3">DS & Algo</option>
+              </select>
+            </div>
+
+            <div class="mb-3">      
+                <input type="date" class="form-control" id="date" name="date" placeholder="Apply By" required> 
+            </div>
+         
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  
+  
