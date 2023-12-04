@@ -91,3 +91,10 @@
     margin: 5px;
     width: 450px;
 }
+.table{
+    width: 80vw;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(21, 17, 17, 0.4), /* right and bottom */
+    -2.5px -2.5px 2px  #171545ec;/* left and top */
+}

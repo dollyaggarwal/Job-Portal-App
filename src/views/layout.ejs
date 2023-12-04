@@ -30,7 +30,7 @@
           <% if(locals.userEmail) { %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               <%= users.name %>
+               <%= locals.userEmail.split('@')[0].replace(/\d/g, '')%>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/logout">Logout</a></li>

@@ -1,4 +1,5 @@
 import UserModel from "../models/user.model.js";
+import JobModel from "../models/jobs.model.js";
 
 export default class UserController{
 
@@ -13,6 +14,7 @@ export default class UserController{
     }
 
     postLogin(req, res){
+      
         const { email, password} = req.body;
         const user = UserModel.isValidUser(email, password);
         if(!user){
@@ -21,9 +23,11 @@ export default class UserController{
             })
         }
         req.session.userEmail = email;
-        var products = ProductModel.get();
-        return res.render('jobs', {products, userEmail : req.session.userEmail});    
+        var job = JobModel.get();
+      
+        return res.render('jobs', {job, userEmail : req.session.userEmail});    
     }
+    
 
     logout(req, res){
         //destroy the session
