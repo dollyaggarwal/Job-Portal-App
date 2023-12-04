@@ -3,34 +3,31 @@
 <div class="details-container">
     <div  class="details-heading">
     <h1>
-        <span>Full Stack Developer</span> Opportunity
+        <span><%= job.tech %></span> Opportunity
     </h1>
 </div>
     <div class="details-icons">
         <button type="button"  class="btn btn-outline-warning">Actively Hiring</button>
-        <a href="update-jobs"> <span><img src="../../images/edit.png"></span></a>
-        <a href="#"><span><img src="../../images/delete.png"></span></a> 
+        <a href="/update-job/<%= job.id %>"> <span><img src="../../images/edit.png"></span></a>
+        <a href="/delete-job/<%= job.id %>" onclick="deleteJob('<%= job.id %>')"><span><img src="../../images/delete.png"></span></a> 
     </div>
   
     <div class="company-name">
-       <h4>Coding Ninjas</h4>
+       <h4><%= job.name %></h4>
         <span >Tech</span>
-        <span class="details-tech">Full Stack Developer</span>
+        <span class="details-tech"><%= job.tech %></span>
     </div>
     <div class="details-content">
-        <span><img src="../../images/map.png">HR IND On-Site</span><br>
-        <span><img src="../../images/rupee.png">6-7LPA</span><br>
-        <span><img src="../../images/timer.png">Apply By 2 Dec 2023</span><br>
-        <span><img src="../../images/number.png">Number of Openings 4</span><br>
+        <span><img src="../../images/map.png"><%= job.location %></span><br>
+        <span><img src="../../images/rupee.png"><%= job.salary %></span><br>
+        <span><img src="../../images/timer.png">Apply By <%= job.date %></span><br>
+        <span><img src="../../images/number.png">Number of Openings <%= job.openings %></span><br>
         <a href="/applicants"><span><img src="../../images/applicant.png">Applicants 3</span></a>
     </div>
     <div class="details-skills">
-        <button type="button" class="btn btn-outline-primary btn-sm ">Python</button>
-              <button type="button" class="btn btn-outline-primary btn-sm">JS</button>
-              <button type="button" class="btn btn-outline-primary btn-sm">MongoDB</button>
-              <button type="button" class="btn btn-outline-primary btn-sm">React</button>
-              <button type="button" class="btn btn-outline-primary btn-sm">Express</button>
-             
+      <% jobs.skills?.forEach(skill =>{ %>
+        <button type="button" class="btn btn-outline-primary btn-sm ">  <%= skill %> </button>
+        <% }) %>
     </div>
      
     <div class="apply-btn">  

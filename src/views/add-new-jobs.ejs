@@ -6,7 +6,7 @@
     
 
     <div class="mb-3">
-    <select class="form-select" aria-label="select example" >
+    <select class="form-select" name="category"  aria-label="select example" >
         <option selected disabled>Select Job Category</option>
         <option value="1">Tech</option>
         <option value="2">Non Tech</option>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="mb-3">
-    <select class="form-select" aria-label="select example" >
+    <select class="form-select" name="designation" aria-label="select example" >
         <option selected disabled>Select Job Designation</option>
         <option value="1">SDE-1</option>
         <option value="2">SDE-2</option>
@@ -29,14 +29,14 @@
         <option value="3">DevOps Engineer</option>
       </select>
     </div>
-
+        <div class="mb-3"> 
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Comapny Name"  required>
+        </div>
+        
         <div class="mb-3">
           <input type="text" class="form-control" id="location" name="location" placeholder="Enter Job Location" required>
           </div>
 
-        <div class="mb-3"> 
-            <input type="text" class="form-control" id="company" name="company" placeholder="Enter Comapny Name"  required>
-        </div>
 
         <div class="mb-3">
             <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter Salary " required> 
@@ -46,8 +46,8 @@
             <input type="number" class="form-control" id="vacancies" name="vacancies" placeholder="Total Vacancies " required> 
         </div>
 
-        <div class="mb-3">
-            <select class="form-select" aria-label="select example" multiple >
+          <div class="mb-3">
+            <select class="form-select" name="Skills" aria-label="select example" multiple >
                 <option selected disabled>Select Skills Required For This Job</option>
                 <option value="1">React</option>
                 <option value="2">NodeJs</option>
@@ -59,7 +59,7 @@
                 <option value="3">SpringBoot</option>
                 <option value="3">DS & Algo</option>
               </select>
-            </div>
+          </div>
 
             <div class="mb-3">      
                 <input type="date" class="form-control" id="date" name="date" placeholder="Apply By" required> 

@@ -23,9 +23,9 @@ export default class UserController{
             })
         }
         req.session.userEmail = email;
-        var job = JobModel.get();
-      
-        return res.render('jobs', {job, userEmail : req.session.userEmail});    
+        var jobs = JobModel.get();
+
+        return res.render('jobs', {jobs, userEmail : req.session.userEmail});    
     }
     
 

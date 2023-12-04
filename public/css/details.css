@@ -80,6 +80,7 @@
   pointer-events: none;
 
 }
+
 .modal{
     z-index: 10000;
     color: black;

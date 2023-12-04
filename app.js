@@ -14,6 +14,7 @@ const app = express();
 
 app.use(express.static('public'));
 app.use(cookieParser());
+
 app.use(session({
     secret: 'secretKey',
     resave:false,
@@ -45,15 +46,18 @@ app.post('/login', usersController.postLogin);
 app.get('/logout', usersController.logout);
 
 app.post('/', usersController.postRegister);
+app.get('/jobs',jobsController.getJobs);
 app.get('/add-new-jobs', jobsController.getNewJobs);
 app.post('/add-new-jobs',jobsController.AddNewJobs);
+app.post('/delete-job/:id',jobsController.deleteJob);
 
 app.get('/update-jobs', jobsController.getUpdateJobView);
+app.get('/details/:id', jobsController.getJobDetailsView);
 
 app.get('/details', jobsController.viewDetails);
 app.get('/applicants', jobsController.viewApplicants);
 
-app.listen(5000, () => {
+app.listen(3000, () => {
     console.log('server is working');
 })
 

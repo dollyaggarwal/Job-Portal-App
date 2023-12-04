@@ -17,6 +17,7 @@ export default class JobsController{
     }
 
     AddNewJobs(req, res, next){
+        console.log(req.body);
         const {name,tech,location,salary,skill1,skill2,skill3,skill4,skill5} = req.body;
         JobModel.add(name,tech,location,salary,skill1,skill2,skill3,skill4,skill5);
         var jobs = JobModel.get();
@@ -35,6 +36,21 @@ export default class JobsController{
         }
         res.render("update-jobs"); 
     }
+    
+    getJobDetailsView(req, res, next){
+
+        const id = req.params.id;  
+        const jobFound = JobModel.getById(id);
+        
+        var jobs = JobModel.get();
+        
+        if(jobFound){
+            res.render('details',{job:jobFound ,jobs, errorMessage: null, userEmail : req.session.userEmail});
+        }
+        else{
+            res.status(401).send('Job not found');
+        }
+    }
 
     postUpdateJob(req, res, next){
         const {id,name,tech,location,salary,skill1,skill2,skill3,skill4,skill5} = req.body;
@@ -48,7 +64,6 @@ export default class JobsController{
     deleteJob(req, res){
 
         const id = req.params.id;
-
         const jobFound = JobModel.getById(id);
 
         if(!jobFound){
@@ -57,6 +72,7 @@ export default class JobsController{
 
         JobModel.delete(id);
         var jobs = JobModel.get();
+        console.log(jobs);
         return res.render('jobs', {jobs, userEmail : req.session.userEmail});
     }
 
