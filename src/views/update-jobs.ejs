@@ -4,68 +4,64 @@
   
     <h2>Update Job</h2>
     
-    <input type="hidden" class="form-control" id="id" name="id" >
+    <input type="hidden" class="form-control" id="id" name="id" value="<%= job.id %>" >
+
     <div class="mb-3">
-    <select class="form-select" aria-label="select example" >
-        <option selected disabled>Select Job Category</option>
-        <option value="1">Tech</option>
-        <option value="2">Non Tech</option>
+    <select class="form-select" aria-label="select example" name="category"  value="<%= job.category %>">
+        <option disabled>Select Job Category</option>
+        <option value="<%= job.category %>">Tech</option>
+        <option value="<%= job.category %>">Non-Tech</option>
       </select>
     </div>
 
     <div class="mb-3">
-    <select class="form-select" aria-label="select example" >
-        <option selected disabled>Select Job Designation</option>
-        <option value="1">SDE-1</option>
-        <option value="2">SDE-2</option>
-        <option value="3">HR</option>
-        <option value="3">MEAN Developer</option>
-        <option value="3">MERN Developer</option>
-        <option value="3">Full-Stack Developer</option>
-        <option value="3">Front-End Developer</option>
-        <option value="3">Back-End Developer</option>
-        <option value="3">Java Developer</option>
-        <option value="3">Python Developer</option>
-        <option value="3">DevOps Engineer</option>
+    <select class="form-select" name="tech" aria-label="select example" >
+        <option disabled>Select Job Designation</option>
+        <option value="<%= job.tech %>">SDE-1</option>
+        <option value="<%= job.tech %>">SDE-2</option>
+        <option value="<%= job.tech %>">HR</option>
+        <option value="<%= job.tech %>">MEAN Developer</option>
+        <option value="<%= job.tech %>">MERN Developer</option>
+        <option value="<%= job.tech %>">Full-Stack Developer</option>
+        <option value="<%= job.tech %>">Front-End Developer</option>
+        <option value="<%= job.tech %>">Back-End Developer</option>
+        <option value="<%= job.tech %>">Java Developer</option>
+        <option value="<%= job.tech %>">Python Developer</option>
+        <option value="<%= job.tech %>">DevOps Engineer</option>
       </select>
     </div>
 
+
+        <div class="mb-3"> 
+            <input type="text" class="form-control" id="company" name="name" placeholder="Enter Company Name"  value="<%= job.name %>"  required>
+        </div>
+        
         <div class="mb-3">
-          <input type="text" class="form-control" id="location" name="location" placeholder="Enter Job Location" required>
+          <input type="text" class="form-control" id="location" name="location" placeholder="Enter Job Location"  value="<%= job.location %>" required>
           </div>
 
-        <div class="mb-3"> 
-            <input type="text" class="form-control" id="company" name="company" placeholder="Enter Comapny Name"  required>
-        </div>
-
         <div class="mb-3">
-            <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter Salary " required> 
+            <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter Salary "  value="<%= job.salary %>" required> 
         </div>
 
         <div class="mb-3"> 
-            <input type="number" class="form-control" id="vacancies" name="vacancies" placeholder="Total Vacancies " required> 
+            <input type="number" class="form-control" id="openings" name="openings" placeholder="Total Openings "  value="<%= job.openings %>" required> 
         </div>
 
         <div class="mb-3">
-            <select class="form-select" aria-label="select example" multiple >
-                <option selected disabled>Select Skills Required For This Job</option>
-                <option value="1">React</option>
-                <option value="2">NodeJs</option>
-                <option value="3">Angular</option>
-                <option value="3">Express</option>
-                <option value="3">MongoDB</option>
-                <option value="3">Java</option>
-                <option value="3">C++</option>
-                <option value="3">SpringBoot</option>
-                <option value="3">DS & Algo</option>
-              </select>
-            </div>
+            <select class="form-select" name="skills" aria-label="select example" multiple>
+              <option selected disabled>Select Skills Required For This Job</option>
+              <% job.skills.forEach((skill) => { %>
+                  <option value="<%= skill %>"><%= skill %></option>
+              <% }); %>
+          </select>
+        </div>
+          
 
             <div class="mb-3">      
-                <input type="date" class="form-control" id="date" name="date" placeholder="Apply By" required> 
-            </div>
-         
-      <button type="submit" class="btn btn-success">Submit</button>
+                <input type="date" class="form-control" id="date" name="date" placeholder="Apply By"  value="<%= job.date %>" required> 
+            </div>   
+       <button type="submit" class="btn btn-success">update job</button>
     </form>
   </div>
   

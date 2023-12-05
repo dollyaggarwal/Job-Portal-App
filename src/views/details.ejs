@@ -8,13 +8,13 @@
 </div>
     <div class="details-icons">
         <button type="button"  class="btn btn-outline-warning">Actively Hiring</button>
-        <a href="/update-job/<%= job.id %>"> <span><img src="../../images/edit.png"></span></a>
-        <a href="/delete-job/<%= job.id %>" onclick="deleteJob('<%= job.id %>')"><span><img src="../../images/delete.png"></span></a> 
+        <a href="/update-jobs/<%= job.id %>"> <span><img src="../../images/edit.png"></span></a>
+        <a href="/delete-job/<%= job.id %>"><span><img src="../../images/delete.png"></span></a> 
     </div>
   
     <div class="company-name">
        <h4><%= job.name %></h4>
-        <span >Tech</span>
+        <span ><%= job.category %></span>
         <span class="details-tech"><%= job.tech %></span>
     </div>
     <div class="details-content">
@@ -22,7 +22,7 @@
         <span><img src="../../images/rupee.png"><%= job.salary %></span><br>
         <span><img src="../../images/timer.png">Apply By <%= job.date %></span><br>
         <span><img src="../../images/number.png">Number of Openings <%= job.openings %></span><br>
-        <a href="/applicants"><span><img src="../../images/applicant.png">Applicants 3</span></a>
+        <a href="/applicants/<%= job.id %>"><span><img src="../../images/applicant.png">Applicants</span></a>
     </div>
     <div class="details-skills">
       <% jobs.skills?.forEach(skill =>{ %>
@@ -35,8 +35,11 @@
        </div>
  
        <div class="details-time-btn">
-
-           <button type="button" class="btn btn-outline-success btn-sm">Posted: 2/12/23, 8:30:37 PM</button>
+          <% if(locals.lastVisit) { %>
+           <button type="button" class="btn btn-outline-success btn-sm">
+            Posted: <%= locals.lastVisit %>
+          </button> 
+            <% } %>     
         </div>
 
         <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -48,7 +51,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="/login" method="post">
+                    <form action="/details" method="post">
                         <div class="mb-3">
                           <label for="name" class="col-form-label">Name</label>
                           <input type="text" class="form-control" id="name" name="name">
@@ -63,7 +66,7 @@
                         </div>
                         <div class="mb-3">
                           <label for="resume" class="col-form-label">Resume</label>
-                          <input type="file" class="form-control" id="resume" accept="resume/.pdf" name="resume">
+                          <input type="file" class="form-control" id="resume" accept="resume/*" name="resume">
                         </div>
                         <button type="submit" class="btn btn-success ">Apply</button>
                       </form>

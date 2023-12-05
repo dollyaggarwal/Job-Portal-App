@@ -1,12 +1,12 @@
 <div class="jobs-section">
     <div class="jobs-container row">
-      <% jobs.forEach(job =>{ %>
+      <% job.forEach(job =>{ %>
       <div class="jobs-card">
         <div class="card-body">
           <span hidden><%= job.id %></span>
           <p class="active-hiring">Actively Hiring</p>
           <h4 class="card-title"><%= job.name %></h4>
-          <p class="card-text">Tech <span class="tech"><%=job.tech %></span></p>
+          <p class="card-text"><%= job.category %> <span class="tech"><%=job.tech %></span></p>
           <h6 class="card-location"><%=job.location %></h6>
           <p class="card-text"><%=job.salary %></p>
   

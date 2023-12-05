@@ -8,8 +8,8 @@ export default class JobsController{
     }
 
     getJobs(req, res){
-        var jobs = JobModel.get();
-        res.render("jobs", {jobs, userEmail : req.session.userEmail});
+        var job = JobModel.get();
+        res.render("jobs", {job, userEmail : req.session.userEmail});
     }
 
     getNewJobs(req, res, next){
@@ -17,11 +17,11 @@ export default class JobsController{
     }
 
     AddNewJobs(req, res, next){
-        console.log(req.body);
-        const {name,tech,location,salary,skill1,skill2,skill3,skill4,skill5} = req.body;
-        JobModel.add(name,tech,location,salary,skill1,skill2,skill3,skill4,skill5);
-        var jobs = JobModel.get();
-        return res.render('jobs', {jobs, userEmail : req.session.userEmail});
+       
+        const {name,category,tech,location,salary, date,openings,skills} = req.body;
+        JobModel.add(name,category,tech,location,salary, date,openings,skills);
+        var job = JobModel.get();
+        return res.render('jobs', {job, userEmail : req.session.userEmail});
     }
 
     getUpdateJobView(req, res, next){
@@ -34,7 +34,6 @@ export default class JobsController{
         else{
             res.status(401).send('Job not found');
         }
-        res.render("update-jobs"); 
     }
     
     getJobDetailsView(req, res, next){
@@ -53,11 +52,10 @@ export default class JobsController{
     }
 
     postUpdateJob(req, res, next){
-        const {id,name,tech,location,salary,skill1,skill2,skill3,skill4,skill5} = req.body;
-        
-        JobModel.update(id,name,tech,location,salary,skill1,skill2,skill3,skill4,skill5);
+        const {id,name,category, tech,location,salary, date,openings,skills} = req.body;
+        JobModel.update(id,name,category, tech,location,salary, date,openings,skills);
 
-        var jobs = JobModel.get();
+        let jobs = JobModel.get();
         return res.render('jobs', {jobs, userEmail : req.session.userEmail});
     }
 
@@ -69,17 +67,9 @@ export default class JobsController{
         if(!jobFound){
             return res.status(401).send('Jobs not found');
         }
-
         JobModel.delete(id);
         var jobs = JobModel.get();
-        console.log(jobs);
         return res.render('jobs', {jobs, userEmail : req.session.userEmail});
     }
-
-    viewDetails(req, res){
-        res.render("details");
-    }
-    viewApplicants(req, res){
-        res.render("applicants");
-    }
+    
 }

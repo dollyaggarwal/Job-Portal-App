@@ -1,6 +1,6 @@
 <div class="mt-5 mb-2 job-form">
      
-    <form action="/jobs" method="post">
+    <form action="/add-new-jobs" method="post">
   
     <h2>Post A New Job</h2>
     
@@ -8,25 +8,25 @@
     <div class="mb-3">
     <select class="form-select" name="category"  aria-label="select example" >
         <option selected disabled>Select Job Category</option>
-        <option value="1">Tech</option>
-        <option value="2">Non Tech</option>
+        <option value="Tech">Tech</option>
+        <option value="Non-Tech">Non-Tech</option>
       </select>
     </div>
 
     <div class="mb-3">
-    <select class="form-select" name="designation" aria-label="select example" >
+    <select class="form-select" name="tech" aria-label="select example" >
         <option selected disabled>Select Job Designation</option>
-        <option value="1">SDE-1</option>
-        <option value="2">SDE-2</option>
-        <option value="3">HR</option>
-        <option value="3">MEAN Developer</option>
-        <option value="3">MERN Developer</option>
-        <option value="3">Full-Stack Developer</option>
-        <option value="3">Front-End Developer</option>
-        <option value="3">Back-End Developer</option>
-        <option value="3">Java Developer</option>
-        <option value="3">Python Developer</option>
-        <option value="3">DevOps Engineer</option>
+        <option value="SDE-1">SDE-1</option>
+        <option value="SDE-2">SDE-2</option>
+        <option value="HR">HR</option>
+        <option value="MEAN Developer">MEAN Developer</option>
+        <option value="MERN Developer">MERN Developer</option>
+        <option value="Full-Stack Developer">Full-Stack Developer</option>
+        <option value="Front-End Developer">Front-End Developer</option>
+        <option value="Back-End Developer">Back-End Developer</option>
+        <option value="Java Developer">Java Developer</option>
+        <option value="Python Developer">Python Developer</option>
+        <option value="DevOps Engineer">DevOps Engineer</option>
       </select>
     </div>
         <div class="mb-3"> 
@@ -43,21 +43,21 @@
         </div>
 
         <div class="mb-3"> 
-            <input type="number" class="form-control" id="vacancies" name="vacancies" placeholder="Total Vacancies " required> 
+            <input type="number" class="form-control" id="openings" name="openings" placeholder="Total Vacancies " required> 
         </div>
 
           <div class="mb-3">
-            <select class="form-select" name="Skills" aria-label="select example" multiple >
+            <select class="form-select" name="skills" aria-label="select example" multiple >
                 <option selected disabled>Select Skills Required For This Job</option>
-                <option value="1">React</option>
-                <option value="2">NodeJs</option>
-                <option value="3">Angular</option>
-                <option value="3">Express</option>
-                <option value="3">MongoDB</option>
-                <option value="3">Java</option>
-                <option value="3">C++</option>
-                <option value="3">SpringBoot</option>
-                <option value="3">DS & Algo</option>
+                <option value="React">React</option>
+                <option value="NodeJs">NodeJs</option>
+                <option value="Angular">Angular</option>
+                <option value="Express">Express</option>
+                <option value="MongoDB">MongoDB</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="SpringBoot">SpringBoot</option>
+                <option value="DS & Algo">DS & Algo</option>
               </select>
           </div>
 
@@ -65,7 +65,7 @@
                 <input type="date" class="form-control" id="date" name="date" placeholder="Apply By" required> 
             </div>
          
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success">Add Job</button>
     </form>
   </div>
   
