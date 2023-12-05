@@ -9,12 +9,12 @@ export default class UserController{
 
     postRegister(req, res){
         const {name, email,password} = req.body;
+     
         UserModel.add(name, email, password);
         res.render('login', {errorMessage: null });
     }
 
     postLogin(req, res){
-      
         const { email, password} = req.body;
         const user = UserModel.isValidUser(email, password);
         if(!user){
@@ -23,9 +23,9 @@ export default class UserController{
             })
         }
         req.session.userEmail = email;
-        var jobs = JobModel.get();
-
-        return res.render('jobs', {jobs, userEmail : req.session.userEmail});    
+        var job = JobModel.get();
+       
+        return res.render('index', {job,userEmail : req.session.userEmail});    
     }
     
 

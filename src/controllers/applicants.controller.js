@@ -5,12 +5,19 @@ import { uploadFile } from '../middlewares/file-upload.middleware.js';
 
 export default class ApplicantsController{  
 
-    AddNewApplicants(req, res, next){
+    getApplicants(req, res){
+        let applicant = ApplicantsModel.get();
+        res.render("applicants",{applicant, userEmail : req.session.userEmail});
+    }
+
+    addNewApplicants(req, res, next){
         const {name,email,contact} = req.body;
         const resume = 'resume/' + req.file.filename;
         ApplicantsModel.add(name,email,contact,resume);
         var applicant = ApplicantsModel.get();
-        return res.render('details', {applicant});
+        var job = JobModel.get();
+        return res.render('jobs',{job,applicant, userEmail : req.session.userEmail});  
+      
     }
 
 }

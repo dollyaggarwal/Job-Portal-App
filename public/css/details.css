@@ -17,7 +17,7 @@
 .details-heading{
     text-align: center;
     padding: 15px;
-    margin: 5px;
+    margin: 9px;
     
 }
 .details-heading span{
@@ -43,10 +43,10 @@
 }
 .company-name h4{
     color: #ffc107;
-    margin: 5px;
+    margin: 8px;
 }
 .company-name span{
-    margin: 5px;
+    margin: 6px;
     font-size: 22px;
 }
 .company-name .details-tech{
@@ -54,7 +54,7 @@
 
 }
 .details-content{
-    margin: 15px 0 20px 50px;
+    margin: 15px 0 23px 50px;
 }
 .details-content img{
     width: 16px;
@@ -76,7 +76,7 @@
     width: 200px;
 }
 .details-time-btn{
-    margin: 25px;
+    margin: 26px;
   pointer-events: none;
 
 }

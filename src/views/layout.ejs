@@ -37,22 +37,20 @@
               <li><a class="dropdown-item" href="/logout">Logout</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/add-new-jobs">Post New Job</a></li>
-
+              </ul>
+            </li>
               <% } else { %>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/logout" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Recruiter
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/login">Login</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/add-new-jobs">Add New Job</a></li>
-              
-                  <% } %>
-            </ul>
-          </li>
+                </ul>
+              </li>
+                  <% } %> 
        
-        </ul>
+            </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>

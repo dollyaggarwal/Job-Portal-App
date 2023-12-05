@@ -1,5 +1,6 @@
 import path from 'path';
 import JobModel from '../models/jobs.model.js';
+import validationMiddleware from '../middlewares/validation.middleware.js';
 
 
 export default class JobsController{
@@ -18,8 +19,8 @@ export default class JobsController{
 
     AddNewJobs(req, res, next){
        
-        const {name,category,tech,location,salary, date,openings,skills} = req.body;
-        JobModel.add(name,category,tech,location,salary, date,openings,skills);
+        const {company,category,tech,location,salary, date,openings,skills} = req.body;
+        JobModel.add(company,category,tech,location,salary, date,openings,skills);
         var job = JobModel.get();
         return res.render('jobs', {job, userEmail : req.session.userEmail});
     }
@@ -52,8 +53,8 @@ export default class JobsController{
     }
 
     postUpdateJob(req, res, next){
-        const {id,name,category, tech,location,salary, date,openings,skills} = req.body;
-        JobModel.update(id,name,category, tech,location,salary, date,openings,skills);
+        const {id,company,category, tech,location,salary, date,openings,skills} = req.body;
+        JobModel.update(id,company,category, tech,location,salary, date,openings,skills);
 
         let jobs = JobModel.get();
         return res.render('jobs', {jobs, userEmail : req.session.userEmail});
@@ -68,8 +69,8 @@ export default class JobsController{
             return res.status(401).send('Jobs not found');
         }
         JobModel.delete(id);
-        var jobs = JobModel.get();
-        return res.render('jobs', {jobs, userEmail : req.session.userEmail});
+        var job = JobModel.get();
+        return res.render('jobs', {job, userEmail : req.session.userEmail});
     }
     
 }

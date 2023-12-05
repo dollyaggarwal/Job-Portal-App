@@ -1,8 +1,8 @@
 export default class JobModel{
 
-    constructor(_id,_name,_category,_tech, _location,_salary, _date,_openings,_skills ){
+    constructor(_id,_company,_category,_tech, _location,_salary, _date,_openings,_skills ){
         this.id = _id;
-        this.name = _name;
+        this.company = _company;
         this.category =_category;
         this.tech = _tech;
         this.location = _location;
@@ -15,12 +15,12 @@ export default class JobModel{
     static get(){
         return jobs;
     }
-    static add(name,category, tech,location,salary, date,openings,skills){
-        var newJOb = new JobModel(jobs.length+1, name, category,tech, location, salary, date, openings, skills);
+    static add(company,category, tech,location,salary, date,openings,skills){
+        var newJOb = new JobModel(jobs.length+1, company, category,tech, location, salary, date, openings, skills);
         jobs.push(newJOb);
     }
-    static update(id,name,category,tech, location,salary, date,openings,skills){
-        const jobObj = {id,name,category, tech,location,salary, date,openings,skills};
+    static update(id,company,category,tech, location,salary, date,openings,skills){
+        const jobObj = {id,company,category, tech,location,salary, date,openings,skills};
         const index = jobs.findIndex(
             (j) => j.id == jobObj.id);
             jobs[index] = jobObj;

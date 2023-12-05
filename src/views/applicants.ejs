@@ -10,25 +10,16 @@
           </tr>
         </thead>
         <tbody>
+          <% applicant.forEach(applicant =>{ %>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td><button type="button" class="btn btn-outline-primary">View</button></td>
+            <th scope="row"><%= applicant.id %></th>
+            <td><%= applicant.name%></td>
+            <td><%= applicant.email %></td>
+            <td><%= applicant.contact %></td>
+            <td>
+              <a href="<%= applicant.resume %>" target="_blank" name="resume" class="btn btn-outline-primary">View</a>
+            </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td><button type="button" class="btn btn-outline-primary">View</button></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-            <td><button type="button" class="btn btn-outline-primary">View</button></td>
-          </tr>
+       <% }); %>
         </tbody>
       </table>

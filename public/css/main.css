@@ -3,11 +3,13 @@
     padding: 0;  
     background-attachment: fixed;
     box-sizing: border-box;
-    position: relative;
+    background-size: cover;
+}
+.main-container{
+    height: 100vh;
 }
 .navbar {
     background: #181642;
-   
 }
 .navbar-brand{
     color: white;

@@ -1,6 +1,11 @@
+<%if(errorMessage){%>
+  <div class="alert alert-danger" role="alert">
+    <%=errorMessage%>
+  </div>
+<%}%>
 <div class="mt-5 mb-2 job-form">
      
-    <form action="/add-new-jobs" method="post">
+    <form action="/jobs" method="post">
   
     <h2>Post A New Job</h2>
     
@@ -30,11 +35,11 @@
       </select>
     </div>
         <div class="mb-3"> 
-            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Comapny Name"  required>
+            <input type="text" class="form-control" id="company" name="company" placeholder="Enter Comapny Name" >
         </div>
         
         <div class="mb-3">
-          <input type="text" class="form-control" id="location" name="location" placeholder="Enter Job Location" required>
+          <input type="text" class="form-control" id="location" name="location" placeholder="Enter Job Location">
           </div>
 
 
@@ -43,7 +48,7 @@
         </div>
 
         <div class="mb-3"> 
-            <input type="number" class="form-control" id="openings" name="openings" placeholder="Total Vacancies " required> 
+            <input type="number" class="form-control" id="openings" name="openings" placeholder="Total Vacancies "> 
         </div>
 
           <div class="mb-3">
@@ -57,12 +62,13 @@
                 <option value="Java">Java</option>
                 <option value="C++">C++</option>
                 <option value="SpringBoot">SpringBoot</option>
+                <option value="Python">Python</option>
                 <option value="DS & Algo">DS & Algo</option>
               </select>
           </div>
 
             <div class="mb-3">      
-                <input type="date" class="form-control" id="date" name="date" placeholder="Apply By" required> 
+                <input type="date" class="form-control" id="date" name="date" placeholder="Apply By"> 
             </div>
          
       <button type="submit" class="btn btn-success">Add Job</button>
