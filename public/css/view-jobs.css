@@ -40,9 +40,14 @@
 .card-text{
     margin: 15px 0px 15px 5px;
 }
+.category{
+    margin-left: 2px;
+    font-size: 18px;
+}
 .card-text .tech{
     color: rgb(14, 106, 211);
-    margin: 5px;
+    margin-left: 7px;
+    font-size: 21px;
 }
 .card-location{
     margin-left: 5px;
@@ -53,5 +58,10 @@
     margin: 3px 2px;
 }
 .card-body a{
-    margin: 7px;
+    margin: 8px 0 2px 8px;
 }
+.card-body img{
+    width: 18px;
+    margin-right: 6px;
+    margin-left: 8px;
+ }

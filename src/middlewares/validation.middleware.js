@@ -9,7 +9,7 @@ const rules= [
 
     body('tech').notEmpty().withMessage('Job Designation is required to select'),
 
-    body('name').notEmpty().withMessage('Comapany Name is required'),
+    body('company').notEmpty().withMessage('Comapany Name is required'),
   
 
     body('location').notEmpty().withMessage('Location is required'),

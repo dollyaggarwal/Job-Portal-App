@@ -36,8 +36,8 @@ export default class JobModel{
 
 }
 let jobs = [
-    new JobModel(1, 'Amazon','Tech', 'SDE-1', 'Gurugram', '6-7','2023-11-30',4,['JS','Node','React','Java','SpringBoot']),
-    new JobModel(2, 'Facebook','Tech','Full Stack Developer', 'Banglore', '8-9','2023-11-20',8,['DSA','JS','React','Node','Express']),
-    new JobModel(3, 'Infosys', 'Tech','Python', 'Noida', '7-8','2023-12-02',13,['C++','Java','Python','ML','DSA']),
-    new JobModel(4, 'TCS', 'Non-Tech','HR Manager', 'Noida', '4-5','2023-12-10',2,['English','Comm Skills','Management Theory','Apptitude']),
+    new JobModel(1, 'Amazon','Tech', 'SDE-1', 'Gurugram IND Remote', '6-7','2023-11-30',4,['JS','NodeJs','ReactJs','Express','DS & Algo','Java','SpringBoot','Git','Angular', 'NextJs','MongoDB']),
+    new JobModel(2, 'Facebook','Tech','Full Stack Developer', 'Banglore IND', '8-9','2023-11-20',8,['DSA','JavaScript','React','Node','Express','comm skills','Tailwind CSS','Jquery']),
+    new JobModel(3, 'Infosys', 'Tech','Python', 'Noida On-Site', '7-8','2023-12-02',13,['c','C++','Java','SpringBoot','Python','Graphics','DSA']),
+    new JobModel(4, 'TCS', 'Non-Tech','HR Manager', 'Noida IND', '4-5','2023-12-10',2,['English','Comm Skills','Management Theory','Apptitude','Presentation Skills']),
 ];
