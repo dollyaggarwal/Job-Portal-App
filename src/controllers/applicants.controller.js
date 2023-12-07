@@ -11,12 +11,12 @@ export default class ApplicantsController{
     }
 
     addNewApplicants(req, res, next){
-        const {name,email,contact} = req.body;
+        const {applicantname,emailid,applicantcontact} = req.body;
         const resume = 'resume/' + req.file.filename;
-        ApplicantsModel.add(name,email,contact,resume);
+        ApplicantsModel.add(applicantname,emailid,applicantcontact,resume);
         var applicant = ApplicantsModel.get();
         var job = JobModel.get();
-        return res.render('jobs',{job,applicant, userEmail : req.session.userEmail});  
+        return res.render('jobs',{applicant,job, userEmail : req.session.userEmail});  
       
     }
 

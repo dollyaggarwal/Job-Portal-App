@@ -30,7 +30,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(path.resolve(), 'src','views'));
 
 app.use(ejsLayouts);
-app.use(express.static('src/views'));
+
 
 const jobsController = new JobsController();
 const usersController = new UserController();
@@ -66,8 +66,9 @@ app.get('/details/:id',setLastVisit, jobsController.getJobDetailsView);
 
 app.get('/applicants',uploadFile.single('resume'),auth, applicantsController.getApplicants);
 
-app.post('/jobs', uploadFile.single('resume'), applicantsController.addNewApplicants);
+app.post('/applied', uploadFile.single('resume'), applicantsController.addNewApplicants);
 
+app.use(express.static('src/views'));
 
 app.listen(3000, () => {
     console.log('server is working');

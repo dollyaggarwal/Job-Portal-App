@@ -13,9 +13,9 @@
           <% applicant.forEach(applicant =>{ %>
           <tr>
             <th scope="row"><%= applicant.id %></th>
-            <td><%= applicant.name%></td>
-            <td><%= applicant.email %></td>
-            <td><%= applicant.contact %></td>
+            <td><%= applicant.applicantname%></td>
+            <td><%= applicant.emailid %></td>
+            <td><%= applicant.applicantcontact %></td>
             <td>
               <a href="<%= applicant.resume %>" target="_blank" name="resume" class="btn btn-outline-primary">View</a>
             </td>

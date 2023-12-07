@@ -1,18 +1,18 @@
 export default class ApplicantsModel{
 
-    constructor(id,name,email,contact,resume,){
+    constructor(id,applicantname,emailid,applicantcontact,resume,){
         this.id =  id;
-        this.name = name;
-        this.email = email;
-        this.contact = contact;
+        this.applicantname = applicantname;
+        this.emailid = emailid;
+        this.applicantcontact = applicantcontact;
         this.resume = resume;
     }   
     
     static get() {
         return applicants;
     }
-    static add(name, email, contact, resume){
-        const newApplicant = new ApplicantsModel(applicants.length+1, name, email, contact, resume);
+    static add(applicantname, emailid, applicantcontact, resume){
+        const newApplicant = new ApplicantsModel(applicants.length+1, applicantname, emailid, applicantcontact, resume);
         applicants.push(newApplicant);
     }
 }

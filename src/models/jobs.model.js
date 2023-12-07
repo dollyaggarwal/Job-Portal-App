@@ -20,7 +20,7 @@ export default class JobModel{
         jobs.push(newJOb);
     }
     static update(id,company,category,tech, location,salary, date,openings,skills){
-        const jobObj = {id,company,category, tech,location,salary, date,openings,skills};
+        const jobObj = {id,company,category,tech,location,salary, date,openings,skills};
         const index = jobs.findIndex(
             (j) => j.id == jobObj.id);
             jobs[index] = jobObj;

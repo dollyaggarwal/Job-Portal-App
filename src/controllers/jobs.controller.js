@@ -53,11 +53,11 @@ export default class JobsController{
     }
 
     postUpdateJob(req, res, next){
-        const {id,company,category, tech,location,salary, date,openings,skills} = req.body;
-        JobModel.update(id,company,category, tech,location,salary, date,openings,skills);
+        const {id,company,category,tech,location,salary, date,openings,skills} = req.body;
+        JobModel.update(id,company,category,tech,location,salary, date,openings,skills);
 
-        let jobs = JobModel.get();
-        return res.render('jobs', {jobs, userEmail : req.session.userEmail});
+        let job = JobModel.get();
+        return res.render('jobs', {job, userEmail : req.session.userEmail});
     }
 
     deleteJob(req, res){
